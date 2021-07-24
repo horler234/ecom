@@ -14,6 +14,8 @@ import { HamburgerIcon } from "./HamburgerIcon";
 import { SearchIcon } from "./SearchIcon";
 import { ProfileIcon } from "./ProfileIcon";
 import { CartIcon } from "./CartIcon";
+import { LogoIcon } from "./LogoIcon";
+import {ArrowIOSRightIcon} from "./ArrowIOSRightIcon";
 
 export {
   ArrowDownCircleIcon,
@@ -32,4 +34,6 @@ export {
   SearchIcon,
   ProfileIcon,
   CartIcon,
+  LogoIcon,
+  ArrowIOSRightIcon
 };

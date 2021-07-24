@@ -13,6 +13,7 @@ import {
   ArrowUpLeftIcon,
   ArrowUpRightIcon,
   CartIcon,
+  HamburgerIcon
 } from "../components/icons";
 
 export default function DemoPage() {
@@ -36,6 +37,7 @@ export default function DemoPage() {
       <ArrowDownLeftIcon />
       <ArrowDownRightIcon />
       <CartIcon />
+      <HamburgerIcon />
     </>
   );
 }
