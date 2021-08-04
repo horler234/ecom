@@ -1,0 +1,39 @@
+export const REQUEST_QUERY_INVALID = "REQUEST_QUERY_INVALID";
+export const REQUEST_BODY_INVALID = "REQUEST_BODY_INVALID";
+export const REQUEST_METHOD_INVALID = "REQUEST_METHOD_INVALID";
+export const FILE_TOO_LARGE = "FILE_TOO_LARGE";
+export const FILE_TYPE_INVALID = "FILE_TYPE_INVALID";
+export const NOT_AUTHORIZED = "NOT_AUTHORIZED";
+export const INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR";
+export const ITEM_NOT_FOUND = "ITEM_NOT_FOUND";
+export const DUPLICATE_ITEM = "DUPLICATE_ITEM";
+export const PAYMENT_ERROR = "PAYMENT_ERROR";
+
+export type Errors = {
+  readonly REQUEST_QUERY_INVALID: string;
+  readonly REQUEST_BODY_INVALID: string;
+  readonly REQUEST_METHOD_INVALID: string;
+  readonly FILE_TOO_LARGE: string;
+  readonly FILE_TYPE_INVALID: string;
+  readonly NOT_AUTHORIZED: string;
+  readonly INTERNAL_SERVER_ERROR: string;
+  readonly ITEM_NOT_FOUND: string;
+  readonly DUPLICATE_ITEM: string;
+  readonly PAYMENT_ERROR: string;
+};
+
+/**
+ * Errors returned by API
+ */
+export const errors: Errors = {
+  REQUEST_QUERY_INVALID,
+  REQUEST_BODY_INVALID,
+  REQUEST_METHOD_INVALID,
+  FILE_TOO_LARGE,
+  FILE_TYPE_INVALID,
+  NOT_AUTHORIZED,
+  INTERNAL_SERVER_ERROR,
+  ITEM_NOT_FOUND,
+  DUPLICATE_ITEM,
+  PAYMENT_ERROR,
+};

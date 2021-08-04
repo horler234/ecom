@@ -13,7 +13,8 @@ import {
   ArrowUpLeftIcon,
   ArrowUpRightIcon,
   CartIcon,
-  HamburgerIcon
+  HamburgerIcon,
+  PlayCircleIcon
 } from "../components/icons";
 
 export default function DemoPage() {
@@ -38,6 +39,7 @@ export default function DemoPage() {
       <ArrowDownRightIcon />
       <CartIcon />
       <HamburgerIcon />
+      <PlayCircleIcon />
     </>
   );
 }

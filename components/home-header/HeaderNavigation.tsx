@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { ArrowLeftIcon, ArrowRightIcon } from "../icons";
 import { HeaderScroll } from "../../keyframes/HeaderScroll";
 
@@ -89,55 +90,58 @@ type HeaderNavigationProps = {
 export const HeaderNavigation = ({
   onLeftClick,
   onRightClick,
-}: HeaderNavigationProps) => (
-  <HeaderBottomContainer>
-    <HeaderSocialLinks>
-      <li>
-        <Link href="/">
-          <a target="_blank" rel="noopener noreferrer">
-            Instagram
-          </a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/">
-          <a target="_blank" rel="noopener noreferrer">
-            Twitter
-          </a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/">
-          <a target="_blank" rel="noopener noreferrer">
-            Facebook
-          </a>
-        </Link>
-      </li>
-      <li>
-        <Link href="/">
-          <a target="_blank" rel="noopener noreferrer">
-            LinkedIn
-          </a>
-        </Link>
-      </li>
-    </HeaderSocialLinks>
+}: HeaderNavigationProps) => {
+  const router = useRouter();
+  return (
+    <HeaderBottomContainer>
+      <HeaderSocialLinks>
+        <li>
+          <Link href="/">
+            <a target="_blank" rel="noopener noreferrer">
+              Instagram
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/">
+            <a target="_blank" rel="noopener noreferrer">
+              Twitter
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/">
+            <a target="_blank" rel="noopener noreferrer">
+              Facebook
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/">
+            <a target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </Link>
+        </li>
+      </HeaderSocialLinks>
 
-    <HeaderBottomScroll>
-      <span></span>
-    </HeaderBottomScroll>
+      <HeaderBottomScroll onClick={() => router.push("#trending")}>
+        <span></span>
+      </HeaderBottomScroll>
 
-    <div>
-      <HeaderCarouselLeftButton onClick={onLeftClick}>
-        <ArrowLeftIcon iconHeight="13.69px" iconWidth="13.69px" />
-      </HeaderCarouselLeftButton>
+      <div>
+        <HeaderCarouselLeftButton onClick={onLeftClick}>
+          <ArrowLeftIcon iconHeight="13.69px" iconWidth="13.69px" />
+        </HeaderCarouselLeftButton>
 
-      <HeaderCarouselRightButton onClick={onRightClick}>
-        <ArrowRightIcon
-          iconColor="#fff"
-          iconHeight="13.69px"
-          iconWidth="13.69px"
-        />
-      </HeaderCarouselRightButton>
-    </div>
-  </HeaderBottomContainer>
-);
+        <HeaderCarouselRightButton onClick={onRightClick}>
+          <ArrowRightIcon
+            iconColor="#fff"
+            iconHeight="13.69px"
+            iconWidth="13.69px"
+          />
+        </HeaderCarouselRightButton>
+      </div>
+    </HeaderBottomContainer>
+  );
+};

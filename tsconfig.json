@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "next.config.js", "middleware/mongodb.js"  ],
   "exclude": [
     "node_modules"
   ]

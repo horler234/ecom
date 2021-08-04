@@ -4,16 +4,11 @@ import Image from "next/image";
 import styled from "styled-components";
 import { Navbar } from "../components/navbar";
 import { HomeHeader } from "../components/home-header";
-import {
-  SectionHeaderContainer,
-  SectionHeaderText,
-} from "../components/SectionHeader";
+import { TrendingSection } from "../components/trending-section";
+import { createClient } from "contentful";
 
-const TrendingSectionContainer = styled.section`
-  padding-top: 105px;
-`;
-
-export default function HomePage() {
+export default function HomePage({ products }) {
+  console.log(products);
   return (
     <>
       <Head>
@@ -22,12 +17,22 @@ export default function HomePage() {
       </Head>
       <Navbar />
       <HomeHeader />
-
-      <TrendingSectionContainer>
-        <SectionHeaderContainer>
-          <SectionHeaderText>Trending Products</SectionHeaderText>
-        </SectionHeaderContainer>
-      </TrendingSectionContainer>
+      <TrendingSection />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID as string,
+    accessToken: process.env.CONTENTFUL_ACCESS_KEY,
+  });
+
+  const res = await client.getEntries({ content_type: "products" });
+
+  return {
+    props: {
+      products: res.items,
+    },
+  };
 }

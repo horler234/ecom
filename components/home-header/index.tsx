@@ -85,9 +85,11 @@ const HeaderDotsContainer = styled.div`
   right: -50px;
 `;
 
-const HeaderDot = styled.div<{ isActive?: boolean }>`
+const HeaderDot = styled.button<{ isActive?: boolean }>`
   width: 32px;
   height: 32px;
+  cursor: pointer;
+  background: transparent;
   border: 2px solid
     ${(props) =>
       props.isActive ? props.theme.colors.primary.ecomBlack : "transparent"};

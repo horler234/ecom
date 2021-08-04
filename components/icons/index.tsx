@@ -15,7 +15,8 @@ import { SearchIcon } from "./SearchIcon";
 import { ProfileIcon } from "./ProfileIcon";
 import { CartIcon } from "./CartIcon";
 import { LogoIcon } from "./LogoIcon";
-import {ArrowIOSRightIcon} from "./ArrowIOSRightIcon";
+import { ArrowIOSRightIcon } from "./ArrowIOSRightIcon";
+import { PlayCircleIcon } from "./PlayCircleIcon";
 
 export {
   ArrowDownCircleIcon,
@@ -35,5 +36,6 @@ export {
   ProfileIcon,
   CartIcon,
   LogoIcon,
-  ArrowIOSRightIcon
+  ArrowIOSRightIcon,
+  PlayCircleIcon,
 };

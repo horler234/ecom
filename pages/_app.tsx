@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle<ThemeWrapper>`
     margin: 0;
     box-sizing: border-box;
     font-family: NexaRegular, sans-serif;
+    scroll-behavior: smooth;
   }
 
   * {
