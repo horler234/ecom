@@ -1,9 +1,10 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { errors } from "../../constants/errors";
-import connectDB from "../../middleware/mongodb";
-import { User } from "../../models/User";
-import { HttpMethod } from "../../types/HttpMethod";
-import { UserMongoose } from "../../types/UserMongoose";
+import { errors } from "../../../constants/errors";
+import connectDB from "../../../middleware/mongodb";
+import { User } from "../../../models/User";
+import { HttpMethod } from "../../../types/HttpMethod";
+import { UserMongoose } from "../../../types/UserMongoose";
+import { handleAuthErrors } from "../../../util/apiHelpers/handleAuthErrors";
 
 const signUpAPIRoute = async (req: NextApiRequest, res: NextApiResponse) => {
   const method = req.method as HttpMethod;
@@ -23,13 +24,13 @@ const signUpAPIRoute = async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(400).json({ error: errors.REQUEST_BODY_INVALID });
       return;
     }
-    const { email, password, name } = body;
+    const { email, password, name, isRegistered } = body;
 
-    const user = await User.create({ name, email, password });
+    const user = await User.create({ name, email, password, isRegistered });
     res.status(201).json(user);
   } catch (err) {
-    console.error(err);
-    res.status(400).send('Error, user not created');
+    const errors = handleAuthErrors(err);
+    res.status(400).json({ errors });
   }
 };
 
