@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { errors } from "../../../constants/errors";
 import connectDB from "../../../middleware/mongodb";
-import { User } from "../../../models/User";
+import User from "../../../models/User";
 import { HttpMethod } from "../../../types/HttpMethod";
 import { UserMongoose } from "../../../types/UserMongoose";
 import { handleAuthErrors } from "../../../util/apiHelpers/handleAuthErrors";
@@ -31,6 +31,7 @@ const signUpAPIRoute = async (req: NextApiRequest, res: NextApiResponse) => {
   } catch (err) {
     const errors = handleAuthErrors(err);
     res.status(400).json({ errors });
+    console.error(errors);
   }
 };
 

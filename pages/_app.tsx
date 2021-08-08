@@ -2,6 +2,8 @@ import App from "next/app";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { AppTheme } from "../theme/AppTheme";
 import { NextComponentType, NextPageContext } from "next";
+import { Provider } from "next-auth/client";
+// import { Provider } from "next-auth/client";
 
 /**
  * Custom Next.js App
@@ -60,10 +62,12 @@ interface MyAppProps extends App {
 
 const MyApp = ({ Component, pageProps }: MyAppProps) => {
   return (
-    <ThemeProvider theme={AppTheme}>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <Provider session={pageProps.session}>
+      <ThemeProvider theme={AppTheme}>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </Provider>
   );
 };
 
