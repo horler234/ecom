@@ -6,6 +6,10 @@ import { Navbar } from "../components/navbar";
 import { HomeHeader } from "../components/home-header";
 import { TrendingSection } from "../components/trending-section";
 import { createClient } from "contentful";
+import { AboutSection } from "../components/about-section";
+
+
+
 
 export default function HomePage({ products }) {
   console.log(products);
@@ -18,6 +22,8 @@ export default function HomePage({ products }) {
       <Navbar />
       <HomeHeader />
       <TrendingSection />
+      <AboutSection />
+      
     </>
   );
 }

@@ -24,7 +24,7 @@ const TrendingCategoriesContainer = styled.div`
 export const TrendingSection = () => (
   <TrendingSectionContainer id="trending">
     <SectionHeaderContainer>
-      <SectionHeaderText>Trending Products</SectionHeaderText>
+      <SectionHeaderText>Collections</SectionHeaderText>
     </SectionHeaderContainer>
 
     <TrendingCategoriesContainer>

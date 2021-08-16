@@ -38,6 +38,14 @@ const GlobalStyle = createGlobalStyle<ThemeWrapper>`
   font-family: NexaLight;
   src: url("/fonts/Nexa-Light.otf");
 }
+@font-face {
+  font-family: NexaBlack;
+  src: url("/fonts/Nexa-Black.ttf");
+}
+@font-face {
+  font-family: NexaBook;
+  src: url("/fonts/Nexa-Book.ttf");
+}
   html, body {
     margin: 0;
     box-sizing: border-box;

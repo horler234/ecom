@@ -2,27 +2,32 @@ import styled from "styled-components";
 import { ArrowIOSRightIcon } from "../icons";
 import Image from "next/image";
 import { HeaderNavigation } from "./HeaderNavigation";
+import { WideLinkBlackButton, WideLinkTransparentButton } from "../buttons/WideLinkButtons";
 
 const HeaderSection = styled.section`
-  padding: 136px 0 60px;
+  padding: 140px 0 56px;
 `;
 
 const HeaderContainer = styled.div`
   width: 85%;
   max-width: 1160px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
   position: relative;
 `;
 
 const HeaderTextContainer = styled.div`
   width: 100%;
-  max-width: 844px;
+  max-width: 617px;
+  padding-top: 56px;
 
   h1 {
-    font-size: ${(props) => props.theme.typography.sizes.h1};
+    font-size: 64px;
     font-weight: 900;
-    line-height: ${(props) => props.theme.typography.heights.h1};
-    margin-bottom: 26px;
+    font-family: NexaBlack, sans-serif;
+    line-height: 76.86px;
+    margin-bottom: 16px;
     color: ${(props) => props.theme.colors.primary.ecomBlack};
   }
 
@@ -31,8 +36,9 @@ const HeaderTextContainer = styled.div`
     line-height: ${(props) => props.theme.typography.heights.body16};
     color: #666666;
     width: 100%;
-    max-width: 580px;
-    margin-bottom: 56px;
+    max-width: 397px;
+    margin-bottom: 32px;
+    font-family: NexaBook, sans-serif;
   }
 `;
 
@@ -40,49 +46,41 @@ const HeaderTextButtonContainer = styled.div`
   display: flex;
 `;
 
-const HeaderTextButton = styled.button`
-  width: 282px;
-  height: 74px;
-  border-radius: 8px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-family: inherit;
-  font-weight: 700;
-  align-items: center;
-  border: transparent;
-  font-size: 16px;
-`;
 
-const HeaderSignUpButton = styled(HeaderTextButton)`
-  background: ${(props) => props.theme.colors.primary.ecomBlack};
-  color: #fff;
-  margin-right: 16px;
-`;
-
-const HeaderShopNowButton = styled(HeaderTextButton)`
-  background: transparent;
-  border: 2px solid ${(props) => props.theme.colors.primary.ecomBlack};
-  display: flex;
-  justify-content: space-between;
-  padding-right: 25px;
-  padding-left: 44px;
-  transition: all 0.3s ease;
-
-  &:hover {
-    padding-right: 20px;
-  }
-`;
 
 const HeaderImageContainer = styled.div`
+  position: relative;
+`;
+
+const HeaderImageCard = styled.div`
+  width: 221px;
+  height: 94px;
+  padding: 16px;
+  border: 1px solid #b8b8b8;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
   position: absolute;
-  top: 100px;
-  right: 0;
+  bottom: -50px;
+  right: -37px;
+  background: #fff;
+
+  p {
+    font-size: 11.96px;
+    text-transform: uppercase;
+    line-height: 18px;
+    margin-bottom: 24px;
+  }
+
+  span {
+    font-family: NexaBold, sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+  }
 `;
 
 const HeaderDotsContainer = styled.div`
   position: absolute;
-  top: 200px;
-  right: -50px;
+  top: 178px;
+  right: -80px;
 `;
 
 const HeaderDot = styled.button<{ isActive?: boolean }>`
@@ -115,23 +113,30 @@ export const HomeHeader = () => (
 
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit mattis
-          vehicula et justo, lorem pulvinar ornare aliquam scelerisque. Aliquam
-          metus diam condimentum hendrerit nulla. Diam dolor arcu, nunc nibh.
-          Malesuada dignissim elit morbi convallis amet, iaculis consectetur
-          nibh.
+          vehicula et justo, lorem pulvinar ornare aliquam scelerisque.
         </p>
 
         <HeaderTextButtonContainer>
-          <HeaderSignUpButton>Sign Up</HeaderSignUpButton>
-          <HeaderShopNowButton>
+          <WideLinkBlackButton>Sign Up</WideLinkBlackButton>
+          <WideLinkTransparentButton>
             Shop Now
             <ArrowIOSRightIcon />
-          </HeaderShopNowButton>
+          </WideLinkTransparentButton>
         </HeaderTextButtonContainer>
       </HeaderTextContainer>
 
       <HeaderImageContainer>
-        <Image src="/images/chair.png" alt="Demo" width={364} height={461} />
+        <Image
+          src="/images/minimal-chair.png"
+          alt="Demo"
+          width={364}
+          height={461}
+        />
+
+        <HeaderImageCard>
+          <p>Throne Minimal Chair</p>
+          <span>$999.99</span>
+        </HeaderImageCard>
       </HeaderImageContainer>
 
       <HeaderDotsContainer>
@@ -145,8 +150,7 @@ export const HomeHeader = () => (
           <span></span>
         </HeaderDot>
       </HeaderDotsContainer>
-
-      <HeaderNavigation />
     </HeaderContainer>
+    <HeaderNavigation />
   </HeaderSection>
 );

@@ -2,5 +2,5 @@ export interface UserMongoose {
   name: string;
   email: string;
   password: string;
-  isRegistered: boolean;
+  date_added?: string;
 }

@@ -24,9 +24,9 @@ const signUpAPIRoute = async (req: NextApiRequest, res: NextApiResponse) => {
       res.status(400).json({ error: errors.REQUEST_BODY_INVALID });
       return;
     }
-    const { email, password, name, isRegistered } = body;
+    const { email, password, name } = body;
 
-    const user = await User.create({ name, email, password, isRegistered });
+    const user = await User.create({ name, email, password });
     res.status(201).json(user);
   } catch (err) {
     const errors = handleAuthErrors(err);

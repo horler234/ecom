@@ -7,7 +7,11 @@ import { HeaderScroll } from "../../keyframes/HeaderScroll";
 const HeaderBottomContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  width: 85%;
+  max-width: 1160px;
+  margin: 0 auto;
   margin-top: 150px;
+
 `;
 
 const HeaderSocialLinks = styled.ul`

@@ -59,13 +59,13 @@ export const NavIcons = () => (
               </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link href="/">
                 <a>
                   <ProfileIcon />
                 </a>
               </Link>
-            </li>
+            </li> */}
 
             <li>
               <button>

@@ -21,10 +21,10 @@ export const userSchema = new Schema<UserMongoose>({
     required: [true, "Please enter a valid password"],
     minLength: [6, "Minimum password length must be 6 characters"],
   },
-  isRegistered: {
-    type: Boolean,
-    required: true,
-  },
+  date_added: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 // fire a function before a new user has been saved to the database

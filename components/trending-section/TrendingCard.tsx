@@ -7,7 +7,9 @@ const TrendingCardContainer = styled.div`
   height: 327px;
   padding: 30px;
   flex: 0 0 auto;
-  border: 2px solid #bdbdbd;
+  border: 1px solid #525252;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
+  background: #fff;
   display: flex;
   align-items: center;
   margin-right: 16px;
@@ -18,14 +20,15 @@ const TrendingCardDescription = styled.div`
   width: 245px;
   h4 {
     font-size: 24px;
-    line-height: 24px;
+    line-height: 32px;
     font-weight: bold;
   }
 
   p {
     margin: 13px 0 24px;
-    color: #666666;
+    color: #1A1A1A;
     font-size: 16px;
+    font-family: NexaBook, sans-serif;
     line-height: 20.85px;
   }
 

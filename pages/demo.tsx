@@ -33,7 +33,7 @@ export default function DemoPage() {
     try {
       const res = await fetch("/api/auth/signup", {
         method: "POST",
-        body: JSON.stringify({ name, email, password, isRegistered: false }),
+        body: JSON.stringify({ name, email, password }),
         headers: {
           "Content-Type": "application/json",
         },
