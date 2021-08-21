@@ -3,7 +3,7 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { AppTheme } from "../theme/AppTheme";
 import { NextComponentType, NextPageContext } from "next";
 import { Provider } from "next-auth/client";
-// import { Provider } from "next-auth/client";
+import { useState, useEffect } from "react";
 
 /**
  * Custom Next.js App
@@ -20,6 +20,7 @@ import { Provider } from "next-auth/client";
 type MyThemeType = typeof AppTheme;
 export interface ThemeWrapper {
   theme: MyThemeType;
+  hasNoFocus: boolean;
 }
 
 /**
@@ -46,6 +47,10 @@ const GlobalStyle = createGlobalStyle<ThemeWrapper>`
   font-family: NexaBook;
   src: url("/fonts/Nexa-Book.ttf");
 }
+@font-face {
+  font-family: NexaHeavy;
+  src: url("/fonts/Nexa-Heavy.ttf");
+}
   html, body {
     margin: 0;
     box-sizing: border-box;
@@ -61,6 +66,8 @@ const GlobalStyle = createGlobalStyle<ThemeWrapper>`
   *, *:before, *:after {
     box-sizing: inherit;
   }
+
+  ${(props) => props.hasNoFocus && ":focus { outline: none; }"}
 `;
 
 interface MyAppProps extends App {
@@ -69,10 +76,26 @@ interface MyAppProps extends App {
 }
 
 const MyApp = ({ Component, pageProps }: MyAppProps) => {
+  // State, used to keep track of outline or no outline around buttons, inputs, etc.
+  const [hasNoFocus, setHasNoFocus] = useState(true);
+
+  // If the user hits the 'tab' key, we want to add outlines back to focused elements for accessibility.
+  const handleTabKeyPress = (evt: KeyboardEvent) => {
+    if (evt.key === "Tab") setHasNoFocus(false);
+  };
+
+  // Add event listener to listen for 'tab' key.
+  useEffect(() => {
+    document.addEventListener("keydown", handleTabKeyPress, false);
+    return () => {
+      document.removeEventListener("keydown", handleTabKeyPress, false);
+    };
+  }, []);
+
   return (
     <Provider session={pageProps.session}>
       <ThemeProvider theme={AppTheme}>
-        <GlobalStyle />
+        <GlobalStyle hasNoFocus={hasNoFocus} />
         <Component {...pageProps} />
       </ThemeProvider>
     </Provider>

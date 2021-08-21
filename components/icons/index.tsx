@@ -17,6 +17,8 @@ import { CartIcon } from "./CartIcon";
 import { LogoIcon } from "./LogoIcon";
 import { ArrowIOSRightIcon } from "./ArrowIOSRightIcon";
 import { PlayCircleIcon } from "./PlayCircleIcon";
+import { HeartFillIcon } from "./HeartFillIcon";
+import { HeartOutlineIcon } from "./HeartOutlineIcon";
 
 export {
   ArrowDownCircleIcon,
@@ -38,4 +40,6 @@ export {
   LogoIcon,
   ArrowIOSRightIcon,
   PlayCircleIcon,
+  HeartFillIcon,
+  HeartOutlineIcon,
 };

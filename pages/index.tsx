@@ -7,6 +7,7 @@ import { HomeHeader } from "../components/home-header";
 import { TrendingSection } from "../components/trending-section";
 import { createClient } from "contentful";
 import { AboutSection } from "../components/about-section";
+import { CategoriesSection } from "../components/categories-section";
 
 
 
@@ -23,6 +24,8 @@ export default function HomePage({ products }) {
       <HomeHeader />
       <TrendingSection />
       <AboutSection />
+      <CategoriesSection />
+
       
     </>
   );

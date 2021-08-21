@@ -15,10 +15,15 @@ import {
   ArrowUpRightIcon,
   CartIcon,
   HamburgerIcon,
+  HeartFillIcon,
+  HeartOutlineIcon,
   PlayCircleIcon,
 } from "../components/icons";
 import { signIn } from "next-auth/client";
 import { useRouter } from "next/router";
+import styled from "styled-components";
+import { ProductCard } from "../components/product-card";
+
 
 export default function DemoPage() {
   const [name, setName] = useState<string>("");
@@ -85,7 +90,11 @@ export default function DemoPage() {
       <CartIcon />
       <HamburgerIcon />
       <PlayCircleIcon />
-      <form onSubmit={handleSubmit}>
+      <HeartFillIcon iconColor="yellow" iconWidth="18px" iconHeight="18px" />
+      <HeartOutlineIcon iconColor="blue" />
+      <ProductCard />
+      
+      {/* <form onSubmit={handleSubmit}>
         <input
           type="text"
           id="user_name"
@@ -108,7 +117,7 @@ export default function DemoPage() {
           value={password}
         />
         <input type="submit" value="SUBMIT" />
-      </form>
+      </form> */}
     </>
   );
 }
