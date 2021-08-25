@@ -4,12 +4,9 @@ import { ArrowIOSRightIcon, SearchIcon } from "../icons";
 import { ProductCard } from "../product-card";
 import { WideLinkTransparentButton } from "../buttons/WideLinkButtons";
 
-const CategoriesSectionContainer = styled.section`
-  padding: 89px 0 96px;
-  border-bottom: 1px solid #000;
-`;
-
 const CategoriesSectionWrapper = styled.div`
+padding: 89px 0 96px;
+  border-bottom: 1px solid #000;
   width: 85%;
   max-width: 1160px;
   margin: 0 auto;
@@ -128,7 +125,7 @@ const LoadMoreContainer = styled.div`
 `;
 
 export const CategoriesSection = () => (
-    <CategoriesSectionContainer>
+    <section>
         <CategoriesSectionWrapper>
           <SectionHeaderText>Categories</SectionHeaderText>
 
@@ -189,5 +186,5 @@ export const CategoriesSection = () => (
           </WideLinkTransparentButton>
           </LoadMoreContainer>
         </CategoriesSectionWrapper>
-      </CategoriesSectionContainer>
+      </section>
 )

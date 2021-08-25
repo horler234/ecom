@@ -7,12 +7,13 @@ const HomeAboutSectionContainer = styled.section`
   padding: 105px 0 87px;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
-`;
-
-const HomeAboutSectionBox = styled.div`
   width: 85%;
   max-width: 1160px;
   margin: 0 auto;
+`;
+
+const HomeAboutSectionBox = styled.div`
+  
   background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.56) 0%,

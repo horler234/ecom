@@ -91,6 +91,25 @@ const NewCard = styled.div`
   line-height: 10.76px;
 `;
 
+const DiscountPrice = styled.div`
+  p {
+    font-weight: 700;
+    text-decoration: line-through;
+    font-size: 11.92px;
+    line-height: 12px;
+    letter-spacing: 0.08em;
+    color: #979797;
+    margin-bottom: 8px;
+  }
+
+  h3 {
+    font-family: NexaBold, sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    color: #f01919;
+  }
+`;
+
 type ProductCardProps = {
   // data: {
   //   id: string;
@@ -136,7 +155,14 @@ export const ProductCard = ({ discount }: ProductCardProps) => {
           Topshop Crossbody Bag With Hammered Metal Piece in pale blue
         </ProductName>
         <ProductDetailsContainer>
-          <h4>$24</h4>
+          {discount ? (
+            <DiscountPrice>
+              <p>$1500</p>
+              <h3>$1200</h3>
+            </DiscountPrice>
+          ) : (
+            <h4>$24</h4>
+          )}
           <button>Shop</button>
         </ProductDetailsContainer>
       </ProductCardContent>

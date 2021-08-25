@@ -19,6 +19,9 @@ import { ArrowIOSRightIcon } from "./ArrowIOSRightIcon";
 import { PlayCircleIcon } from "./PlayCircleIcon";
 import { HeartFillIcon } from "./HeartFillIcon";
 import { HeartOutlineIcon } from "./HeartOutlineIcon";
+import { PhoneCallIcon } from "./PhoneCallIcon";
+import { PinIcon } from "./PinIcon";
+import {EmailIcon} from "./EmailIcon"
 
 export {
   ArrowDownCircleIcon,
@@ -42,4 +45,7 @@ export {
   PlayCircleIcon,
   HeartFillIcon,
   HeartOutlineIcon,
+  PhoneCallIcon,
+  PinIcon,
+  EmailIcon,
 };
