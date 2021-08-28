@@ -21,7 +21,11 @@ import { HeartFillIcon } from "./HeartFillIcon";
 import { HeartOutlineIcon } from "./HeartOutlineIcon";
 import { PhoneCallIcon } from "./PhoneCallIcon";
 import { PinIcon } from "./PinIcon";
-import {EmailIcon} from "./EmailIcon"
+import { EmailIcon } from "./EmailIcon";
+import { InstagramIcon } from "./InstagramIcon";
+import { TwitterIcon } from "./TwitterIcon";
+import { FacebookIcon } from "./FacebookIcon";
+import { LinkedInIcon } from "./LinkedInIcon";
 
 export {
   ArrowDownCircleIcon,
@@ -48,4 +52,8 @@ export {
   PhoneCallIcon,
   PinIcon,
   EmailIcon,
+  InstagramIcon,
+  TwitterIcon,
+  FacebookIcon,
+  LinkedInIcon,
 };

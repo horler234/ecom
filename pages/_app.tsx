@@ -61,6 +61,7 @@ const GlobalStyle = createGlobalStyle<ThemeWrapper>`
   * {
     margin: 0;
     padding: 0;
+    color: #1A1A1A;
   }
 
   *, *:before, *:after {

@@ -9,18 +9,7 @@ import { createClient } from "contentful";
 import { AboutSection } from "../components/about-section";
 import { CategoriesSection } from "../components/categories-section";
 import { SectionHeaderText } from "../components/SectionHeader";
-import { EmailIcon, PhoneCallIcon, PinIcon } from "../components/icons";
-
-const ContactSectionContainer = styled.section`
-  width: 85%;
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 96px 0;
-  border-bottom: 1px solid #000;
-`;
-
-
-
+import { ContactSection } from "../components/contact-section";
 
 export default function HomePage({ products }) {
   console.log(products);
@@ -35,13 +24,7 @@ export default function HomePage({ products }) {
       <TrendingSection />
       <AboutSection />
       <CategoriesSection />
-
-      <ContactSectionContainer>
-        <SectionHeaderText>Contact</SectionHeaderText>
-        <EmailIcon iconColor="yellow" />
-      </ContactSectionContainer>
-
-      
+      <ContactSection />
     </>
   );
 }
