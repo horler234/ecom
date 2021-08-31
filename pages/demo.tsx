@@ -1,10 +1,14 @@
 import Head from "next/head";
 import React, { useState } from "react";
 import {
+  AmazonIcon,
+  AppleIcon,
   ArrowDownCircleIcon,
   ArrowDownIcon,
   ArrowDownLeftIcon,
   ArrowDownRightIcon,
+  ArrowFillUpIcon,
+  ArrowIOSRightIcon,
   ArrowLeftCircleIcon,
   ArrowLeftIcon,
   ArrowRightCircleIcon,
@@ -14,15 +18,20 @@ import {
   ArrowUpLeftIcon,
   ArrowUpRightIcon,
   CartIcon,
+  CloseIcon,
   HamburgerIcon,
   HeartFillIcon,
   HeartOutlineIcon,
+  PaypalIcon,
   PlayCircleIcon,
+  VisaIcon,
 } from "../components/icons";
 import { signIn } from "next-auth/client";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import { ProductCard } from "../components/product-card";
+import Link from "next/link";
+
 
 
 export default function DemoPage() {
@@ -75,7 +84,7 @@ export default function DemoPage() {
         <title>Ecom | Home</title>
       </Head>
       Home
-      <ArrowDownCircleIcon />
+      {/* <ArrowDownCircleIcon />
       <ArrowUpCircleIcon />
       <ArrowLeftCircleIcon />
       <ArrowRightCircleIcon />
@@ -92,8 +101,7 @@ export default function DemoPage() {
       <PlayCircleIcon />
       <HeartFillIcon iconColor="yellow" iconWidth="18px" iconHeight="18px" />
       <HeartOutlineIcon iconColor="blue" />
-      <ProductCard />
-      
+      <ArrowFillUpIcon iconColor="green" /> */}
       {/* <form onSubmit={handleSubmit}>
         <input
           type="text"

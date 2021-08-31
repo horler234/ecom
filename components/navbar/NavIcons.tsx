@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
-import {
-    SearchIcon,
-    CartIcon,
-    ProfileIcon,
-    HamburgerIcon,
-  } from "../icons";
+import { SearchIcon, CartIcon, ProfileIcon, HamburgerIcon } from "../icons";
 
 export const NavbarIconList = styled.ul`
   list-style: none;
@@ -41,25 +36,29 @@ export const NavbarIconList = styled.ul`
   }
 `;
 
-export const NavIcons = () => (
-    <NavbarIconList>
-            <li>
-              <Link href="/">
-                <a>
-                  <SearchIcon />
-                </a>
-              </Link>
-            </li>
+type NavIconsProps = {
+  onHamburgerClick: () => void;
+};
 
-            <li>
-              <Link href="/">
-                <a>
-                  <CartIcon />
-                </a>
-              </Link>
-            </li>
+export const NavIcons = ({ onHamburgerClick }: NavIconsProps) => (
+  <NavbarIconList>
+    <li>
+      <Link href="/">
+        <a>
+          <SearchIcon />
+        </a>
+      </Link>
+    </li>
 
-            {/* <li>
+    <li>
+      <Link href="/">
+        <a>
+          <CartIcon />
+        </a>
+      </Link>
+    </li>
+
+    {/* <li>
               <Link href="/">
                 <a>
                   <ProfileIcon />
@@ -67,10 +66,10 @@ export const NavIcons = () => (
               </Link>
             </li> */}
 
-            <li>
-              <button>
-                <HamburgerIcon />
-              </button>
-            </li>
-          </NavbarIconList>
-)
+    <li>
+      <button onClick={onHamburgerClick}>
+        <HamburgerIcon />
+      </button>
+    </li>
+  </NavbarIconList>
+);

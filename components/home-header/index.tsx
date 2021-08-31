@@ -2,7 +2,13 @@ import styled from "styled-components";
 import { ArrowIOSRightIcon } from "../icons";
 import Image from "next/image";
 import { HeaderNavigation } from "./HeaderNavigation";
-import { WideLinkBlackButton, WideLinkTransparentButton } from "../buttons/WideLinkButtons";
+import {
+  WideLinkBlackButton,
+  WideLinkTransparentButton,
+} from "../buttons/WideLinkButtons";
+import { HeaderImage } from "./HeaderImage";
+import { useState } from "react";
+import { carouselData } from "../../constants/carouselData";
 
 const HeaderSection = styled.section`
   padding: 140px 0 56px;
@@ -46,37 +52,6 @@ const HeaderTextButtonContainer = styled.div`
   display: flex;
 `;
 
-
-
-const HeaderImageContainer = styled.div`
-  position: relative;
-`;
-
-const HeaderImageCard = styled.div`
-  width: 221px;
-  height: 94px;
-  padding: 16px;
-  border: 1px solid #b8b8b8;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
-  position: absolute;
-  bottom: -50px;
-  right: -37px;
-  background: #fff;
-
-  p {
-    font-size: 11.96px;
-    text-transform: uppercase;
-    line-height: 18px;
-    margin-bottom: 24px;
-  }
-
-  span {
-    font-family: NexaBold, sans-serif;
-    font-size: 20px;
-    line-height: 20px;
-  }
-`;
-
 const HeaderDotsContainer = styled.div`
   position: absolute;
   top: 178px;
@@ -105,52 +80,78 @@ const HeaderDot = styled.button<{ isActive?: boolean }>`
   }
 `;
 
-export const HomeHeader = () => (
-  <HeaderSection>
-    <HeaderContainer>
-      <HeaderTextContainer>
-        <h1>SHOPPING MADE EASY AND FUN</h1>
+export const HomeHeader = () => {
+  const [carouselValue, setCarouselValue] = useState(0);
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit mattis
-          vehicula et justo, lorem pulvinar ornare aliquam scelerisque.
-        </p>
+  const skipCarousel = (num: number) => {
+    if (num > 0) {
+      if (carouselValue === 2) {
+        setCarouselValue(0);
+      } else {
+        setCarouselValue(carouselValue + 1);
+      }
+    } else {
+      if (carouselValue === 0) {
+        setCarouselValue(2);
+      } else {
+        setCarouselValue(carouselValue - 1);
+      }
+    }
+  };
 
-        <HeaderTextButtonContainer>
-          <WideLinkBlackButton>Sign Up</WideLinkBlackButton>
-          <WideLinkTransparentButton>
-            Shop Now
-            <ArrowIOSRightIcon />
-          </WideLinkTransparentButton>
-        </HeaderTextButtonContainer>
-      </HeaderTextContainer>
+  const carouselProd = carouselData[carouselValue];
 
-      <HeaderImageContainer>
-        <Image
-          src="/images/minimal-chair.png"
-          alt="Demo"
-          width={364}
-          height={461}
+  return (
+    <HeaderSection>
+      <HeaderContainer>
+        <HeaderTextContainer>
+          <h1>SHOPPING MADE EASY AND FUN</h1>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit mattis
+            vehicula et justo, lorem pulvinar ornare aliquam scelerisque.
+          </p>
+
+          <HeaderTextButtonContainer>
+            <WideLinkBlackButton>Sign Up</WideLinkBlackButton>
+            <WideLinkTransparentButton>
+              Shop Now
+              <ArrowIOSRightIcon />
+            </WideLinkTransparentButton>
+          </HeaderTextButtonContainer>
+        </HeaderTextContainer>
+
+        {/* <HeaderImage
+        prodName="Throne Minimal Chair"
+        price={999.99}
+        imgSrc="minimal-chair.png"
+      /> */}
+        {/* <HeaderImage
+        prodName="Apple Iphone 12"
+        price={679.99}
+        imgSrc="iphone12.png"
+      /> */}
+        <HeaderImage
+          prodName={carouselProd.prodName}
+          price={carouselProd.price}
+          imgSrc={carouselProd.imgSrc}
         />
 
-        <HeaderImageCard>
-          <p>Throne Minimal Chair</p>
-          <span>$999.99</span>
-        </HeaderImageCard>
-      </HeaderImageContainer>
-
-      <HeaderDotsContainer>
-        <HeaderDot isActive>
-          <span></span>
-        </HeaderDot>
-        <HeaderDot>
-          <span></span>
-        </HeaderDot>
-        <HeaderDot>
-          <span></span>
-        </HeaderDot>
-      </HeaderDotsContainer>
-    </HeaderContainer>
-    <HeaderNavigation />
-  </HeaderSection>
-);
+        <HeaderDotsContainer>
+          {[1, 2, 3].map((val, i) => (
+            <HeaderDot
+              isActive={carouselValue === i}
+              onClick={() => setCarouselValue(i)}
+            >
+              <span></span>
+            </HeaderDot>
+          ))}
+        </HeaderDotsContainer>
+      </HeaderContainer>
+      <HeaderNavigation
+        onLeftClick={() => skipCarousel(-1)}
+        onRightClick={() => skipCarousel(1)}
+      />
+    </HeaderSection>
+  );
+};

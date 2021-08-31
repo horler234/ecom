@@ -5,7 +5,7 @@ import { ProductCard } from "../product-card";
 import { WideLinkTransparentButton } from "../buttons/WideLinkButtons";
 
 const CategoriesSectionWrapper = styled.div`
-padding: 89px 0 96px;
+  padding: 89px 0 96px;
   border-bottom: 1px solid #000;
   width: 85%;
   max-width: 1160px;
@@ -108,7 +108,7 @@ const SearchFilterContainer = styled.div`
         margin-bottom: 4px;
       }
       span:nth-child(2) {
-        width: 12px
+        width: 12px;
       }
       span:last-child {
         width: 6px;
@@ -125,66 +125,66 @@ const LoadMoreContainer = styled.div`
 `;
 
 export const CategoriesSection = () => (
-    <section>
-        <CategoriesSectionWrapper>
-          <SectionHeaderText>Categories</SectionHeaderText>
+  <section>
+    <CategoriesSectionWrapper>
+      <SectionHeaderText>Categories</SectionHeaderText>
 
-          <CategoriesHeaderContainer>
-            <ul>
-              <CategoriesNavItem isActive>
-                <button>All</button>
-              </CategoriesNavItem>
+      <CategoriesHeaderContainer>
+        <ul>
+          <CategoriesNavItem isActive>
+            <button>All</button>
+          </CategoriesNavItem>
 
-              <CategoriesNavItem>
-                <button>Clothing</button>
-              </CategoriesNavItem>
+          <CategoriesNavItem>
+            <button>Clothing</button>
+          </CategoriesNavItem>
 
-              <CategoriesNavItem>
-                <button>Furnitures</button>
-              </CategoriesNavItem>
+          <CategoriesNavItem>
+            <button>Furnitures</button>
+          </CategoriesNavItem>
 
-              <CategoriesNavItem>
-                <button>Tech</button>
-              </CategoriesNavItem>
-            </ul>
+          <CategoriesNavItem>
+            <button>Tech</button>
+          </CategoriesNavItem>
+        </ul>
 
-            <SearchFilterContainer>
-              <SearchIcon iconHeight="16px" iconWidth="16px" />
+        <SearchFilterContainer>
+          <SearchIcon iconHeight="16px" iconWidth="16px" />
 
-              <input type="text" placeholder="Search" />
+          <input type="text" placeholder="Search" />
 
-              <button>
-                <div>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-                Filter
-              </button>
-            </SearchFilterContainer>
-          </CategoriesHeaderContainer>
+          <button>
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            Filter
+          </button>
+        </SearchFilterContainer>
+      </CategoriesHeaderContainer>
 
-          <ProductCardsContainer>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard discount={50} />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard discount={40} />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-          </ProductCardsContainer>
+      <ProductCardsContainer>
+        <ProductCard />
+        <ProductCard />
+        <ProductCard discount={50} />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard discount={40} />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </ProductCardsContainer>
 
-          <LoadMoreContainer>
-          <WideLinkTransparentButton>
-            Load More
-            <ArrowIOSRightIcon />
-          </WideLinkTransparentButton>
-          </LoadMoreContainer>
-        </CategoriesSectionWrapper>
-      </section>
-)
+      <LoadMoreContainer>
+        <WideLinkTransparentButton>
+          Load More
+          <ArrowIOSRightIcon />
+        </WideLinkTransparentButton>
+      </LoadMoreContainer>
+    </CategoriesSectionWrapper>
+  </section>
+);

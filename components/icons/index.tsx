@@ -26,6 +26,13 @@ import { InstagramIcon } from "./InstagramIcon";
 import { TwitterIcon } from "./TwitterIcon";
 import { FacebookIcon } from "./FacebookIcon";
 import { LinkedInIcon } from "./LinkedInIcon";
+import { VisaIcon } from "./VisaIcon";
+import { AmazonIcon } from "./AmazonIcon";
+import { PaypalIcon } from "./PaypalIcon";
+import { AppleIcon } from "./AppleIcon";
+import { ArrowFillUpIcon } from "./ArrowFillUp";
+import { ArrowHeadLeftIcon } from "./ArrowHeadLeftIcon";
+import { CloseIcon } from "./CloseIcon";
 
 export {
   ArrowDownCircleIcon,
@@ -56,4 +63,11 @@ export {
   TwitterIcon,
   FacebookIcon,
   LinkedInIcon,
+  VisaIcon,
+  AmazonIcon,
+  PaypalIcon,
+  AppleIcon,
+  ArrowFillUpIcon,
+  ArrowHeadLeftIcon,
+  CloseIcon,
 };

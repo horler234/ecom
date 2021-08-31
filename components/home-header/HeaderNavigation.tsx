@@ -87,8 +87,8 @@ const HeaderCarouselRightButton = styled(HeaderCarouselDirectionButton)`
 `;
 
 type HeaderNavigationProps = {
-  onLeftClick?: () => void;
-  onRightClick?: () => void;
+  onLeftClick: () => void;
+  onRightClick: () => void;
 };
 
 export const HeaderNavigation = ({

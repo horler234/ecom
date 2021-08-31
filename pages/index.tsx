@@ -10,6 +10,8 @@ import { AboutSection } from "../components/about-section";
 import { CategoriesSection } from "../components/categories-section";
 import { SectionHeaderText } from "../components/SectionHeader";
 import { ContactSection } from "../components/contact-section";
+import { Footer } from "../components/footer";
+import { ArrowHeadLeftIcon } from "../components/icons";
 
 export default function HomePage({ products }) {
   console.log(products);
@@ -25,6 +27,7 @@ export default function HomePage({ products }) {
       <AboutSection />
       <CategoriesSection />
       <ContactSection />
+      <Footer />
     </>
   );
 }
