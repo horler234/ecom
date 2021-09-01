@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Transition, TransitionStatus } from "react-transition-group";
 import styled from "styled-components";
 import { CarouselDataType } from "../../constants/carouselData";
 

@@ -7,7 +7,7 @@ import {
   WideLinkTransparentButton,
 } from "../buttons/WideLinkButtons";
 import { HeaderImage } from "./HeaderImage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { carouselData } from "../../constants/carouselData";
 
 const HeaderSection = styled.section`

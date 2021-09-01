@@ -1,4 +1,4 @@
-export type CarouselDataType = {
+export interface CarouselDataType {
   prodName: string;
   imgSrc: string;
   price: number;

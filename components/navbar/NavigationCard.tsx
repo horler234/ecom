@@ -2,13 +2,18 @@ import styled from "styled-components";
 import { NavigationCardItem } from "./NavigationCardItem";
 import { useRouter } from "next/router";
 import { CloseIcon } from "../icons";
+import { TransitionStatus, Transition } from "react-transition-group";
 
 /**
  *
  * NAVIGATION CARD
  */
 
-const NavigationCardContainer = styled.div`
+const NavigationCardContainer = styled.div<{ status: TransitionStatus }>`
+  transform: ${(props) =>
+    props.status === "entered" ? "translateX(0)" : "translateX(500px)"};
+  opacity: ${(props) => (props.status === "entered" ? "1" : "0")};
+  transition: all ease-in-out 500ms;
   width: 500px;
   height: 750px;
   border: 1px solid #000;
@@ -55,15 +60,19 @@ const NavSignUpButtonContainer = styled.div`
 
 type NavigationCardProps = {
   onCloseClick: () => void;
+  status?: any;
 };
 
-export const NavigationCard = ({ onCloseClick }: NavigationCardProps) => {
+export const NavigationCard = ({
+  onCloseClick,
+  status,
+}: NavigationCardProps) => {
   const router = useRouter();
 
   const checkActive = (path: string): boolean => router.pathname === path;
 
   return (
-    <NavigationCardContainer>
+    <NavigationCardContainer status={status}>
       <NavigationCloseButton onClick={onCloseClick}>
         <CloseIcon />
       </NavigationCloseButton>
