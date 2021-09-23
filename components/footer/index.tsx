@@ -73,7 +73,7 @@ export const Footer = () => {
           <AppleIcon />
         </FooterIconsContainer>
 
-        <FooterScrollUpButton>
+        <FooterScrollUpButton onClick={() => scrollTo(0, 0)}>
           <ArrowFillUpIcon iconColor="#fff" />
         </FooterScrollUpButton>
       </FooterIconScrollContainer>

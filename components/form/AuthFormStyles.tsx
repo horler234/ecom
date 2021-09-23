@@ -5,8 +5,8 @@ export const SignInPageWrapper = styled.main`
   justify-content: space-between;
 `;
 
-export const SignInContainer = styled.div`
-  padding-top: 113px;
+export const SignInContainer = styled.div<{ isSignUp: boolean }>`
+  padding-top: ${(props) => (props.isSignUp ? "56px" : "113px")};
   padding-left: 140px;
 
   h1 {
@@ -18,10 +18,10 @@ export const SignInContainer = styled.div`
   }
 `;
 
-export const SignInImageWrapper = styled.div`
+export const SignInImageWrapper = styled.div<{ isSignUp?: boolean }>`
   width: 588px;
   height: 820px;
-  background-color: #fefcf6;
+  background-color: ${(props) => (props.isSignUp ? "#F7F7F7" : "#fefcf6")};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,13 +38,13 @@ export const SignWithGoogleWrapper = styled.div`
   }
 `;
 
-export const NoAccountWrapper = styled.div`
+export const NoAccountWrapper = styled.div<{ isSignUp?: boolean }>`
   text-align: center;
   margin-top: 16px;
   font-size: 12px;
   line-height: 12px;
   font-family: NexaBook, sans-serif;
-  margin-bottom: 42px;
+  ${(props) => !props.isSignUp && `margin-bottom: 42px`};
 
   a {
     text-decoration: none;

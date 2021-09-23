@@ -35,6 +35,6 @@ export const SignWithGoogleButton = ({
   onClick,
 }: SignWithGoogleButtonProps) => (
   <SignWithGoogle widthSmall="100%" onClick={onClick}>
-    <GoogleIcon /> {isSignUp ? "Sign Up with Google" : "Sign In With Google"}
+    <GoogleIcon /> Sign {isSignUp ? "Up" : "In"} with Google
   </SignWithGoogle>
 );

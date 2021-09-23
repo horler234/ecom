@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ArrowIOSRightIcon } from "../icons";
-import Image from "next/image";
+import { useRouter } from "next/router";
 import { HeaderNavigation } from "./HeaderNavigation";
 import {
   WideLinkBlackButton,
@@ -82,6 +82,7 @@ const HeaderDot = styled.button<{ isActive?: boolean }>`
 
 export const HomeHeader = () => {
   const [carouselValue, setCarouselValue] = useState(0);
+  const router = useRouter();
 
   const skipCarousel = (num: number) => {
     if (num > 0) {
@@ -113,7 +114,9 @@ export const HomeHeader = () => {
           </p>
 
           <HeaderTextButtonContainer>
-            <WideLinkBlackButton>Sign Up</WideLinkBlackButton>
+            <WideLinkBlackButton onClick={() => router.push("/signup")}>
+              Sign Up
+            </WideLinkBlackButton>
             <WideLinkTransparentButton>
               Shop Now
               <ArrowIOSRightIcon />
