@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { ArrowLeftIcon, ArrowRightIcon } from "../icons";
 import { HeaderScroll } from "../../keyframes/HeaderScroll";
+import { HeaderSocialLinks } from "./HeaderSocialLinks";
 
 const HeaderBottomContainer = styled.div`
   display: flex;
@@ -11,33 +11,6 @@ const HeaderBottomContainer = styled.div`
   max-width: 1160px;
   margin: 0 auto;
   margin-top: 150px;
-
-`;
-
-const HeaderSocialLinks = styled.ul`
-  list-style: none;
-  display: flex;
-  padding-top: 40px;
-
-  li {
-    margin-right: 40px;
-
-    a {
-      text-transform: uppercase;
-      text-decoration: none;
-      color: ${(props) => props.theme.colors.primary.ecomBlack};
-      font-size: 12px;
-      line-height: 12px;
-      font-weight: 700;
-      &:hover {
-        color: ${(props) => props.theme.colors.secondary.ecomOrange};
-      }
-    }
-  }
-
-  li:last-child {
-    margin-right: 0;
-  }
 `;
 
 const HeaderBottomScroll = styled.button`
@@ -98,36 +71,7 @@ export const HeaderNavigation = ({
   const router = useRouter();
   return (
     <HeaderBottomContainer>
-      <HeaderSocialLinks>
-        <li>
-          <Link href="/">
-            <a target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a target="_blank" rel="noopener noreferrer">
-              Twitter
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a target="_blank" rel="noopener noreferrer">
-              Facebook
-            </a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-          </Link>
-        </li>
-      </HeaderSocialLinks>
+      <HeaderSocialLinks />
 
       <HeaderBottomScroll onClick={() => router.push("#trending")}>
         <span></span>

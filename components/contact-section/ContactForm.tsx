@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Input } from "../form/Input";
 
 const ContactFormContainer = styled.div`
   h4 {
@@ -22,7 +23,7 @@ const ContactFormWrapper = styled.form`
   width: 427px;
   margin-top: 22px;
 
-  input {
+  /* input {
     width: 100%;
     border: 1px solid #666;
     padding: 28px 16px;
@@ -44,7 +45,7 @@ const ContactFormWrapper = styled.form`
     &:-ms-input-placeholder {
       font-style: italic;
     }
-  }
+  } */
 
   button {
     width: 100%;
@@ -70,7 +71,7 @@ export const ContactForm = () => (
     </p>
 
     <ContactFormWrapper>
-      <input type="text" placeholder="Email" />
+      <Input placeholder="Email" id="home_contact_email" label="email" marginBottom="24px" />
       <button>Subscribe</button>
     </ContactFormWrapper>
   </ContactFormContainer>

@@ -21,7 +21,6 @@ export default function HomePage({ products }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Ecom | Home</title>
       </Head>
-      <Navbar />
       <HomeHeader />
       <TrendingSection />
       <AboutSection />

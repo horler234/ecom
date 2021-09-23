@@ -4,6 +4,7 @@ import { AppTheme } from "../theme/AppTheme";
 import { NextComponentType, NextPageContext } from "next";
 import { Provider } from "next-auth/client";
 import { useState, useEffect } from "react";
+import { Navbar } from "../components/navbar";
 
 /**
  * Custom Next.js App
@@ -97,6 +98,7 @@ const MyApp = ({ Component, pageProps }: MyAppProps) => {
     <Provider session={pageProps.session}>
       <ThemeProvider theme={AppTheme}>
         <GlobalStyle hasNoFocus={hasNoFocus} />
+        <Navbar />
         <Component {...pageProps} />
       </ThemeProvider>
     </Provider>

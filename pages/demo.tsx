@@ -8,6 +8,7 @@ import {
   ArrowDownLeftIcon,
   ArrowDownRightIcon,
   ArrowFillUpIcon,
+  ArrowHeadLeftIcon,
   ArrowIOSRightIcon,
   ArrowLeftCircleIcon,
   ArrowLeftIcon,
@@ -32,7 +33,15 @@ import styled from "styled-components";
 import { ProductCard } from "../components/product-card";
 import Link from "next/link";
 
+const Cell = ({view, onClick}) => {
+  return (
+    <td onClick={onClick}>{view}</td>
+  )
+}
 
+type  Props = {
+  amount: number;
+}
 
 export default function DemoPage() {
   const [name, setName] = useState<string>("");
@@ -83,7 +92,6 @@ export default function DemoPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Ecom | Home</title>
       </Head>
-      Home
       {/* <ArrowDownCircleIcon />
       <ArrowUpCircleIcon />
       <ArrowLeftCircleIcon />
@@ -126,6 +134,7 @@ export default function DemoPage() {
         />
         <input type="submit" value="SUBMIT" />
       </form> */}
+      <ArrowHeadLeftIcon />
     </>
   );
 }

@@ -33,6 +33,9 @@ import { AppleIcon } from "./AppleIcon";
 import { ArrowFillUpIcon } from "./ArrowFillUp";
 import { ArrowHeadLeftIcon } from "./ArrowHeadLeftIcon";
 import { CloseIcon } from "./CloseIcon";
+import { EyeOffIcon } from "./EyeOffIcon";
+import { EyeIcon } from "./EyeIcon";
+import { GoogleIcon } from "./GoogleIcon";
 
 export {
   ArrowDownCircleIcon,
@@ -70,4 +73,7 @@ export {
   ArrowFillUpIcon,
   ArrowHeadLeftIcon,
   CloseIcon,
+  EyeOffIcon,
+  EyeIcon,
+  GoogleIcon,
 };

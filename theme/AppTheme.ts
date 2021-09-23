@@ -1,5 +1,6 @@
 import { colors } from "./colors";
-import {typography} from "./typography";
+import { typography } from "./typography";
+import { media } from "./media";
 
 /**
  * AppTheme is the theme given to styled-components
@@ -9,5 +10,6 @@ export const AppTheme = {
   name: "AppTheme",
   //   isLightTheme: true,
   colors,
+  media,
   typography,
 };
