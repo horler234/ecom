@@ -5,6 +5,9 @@ import { NextComponentType, NextPageContext } from "next";
 import { Provider } from "next-auth/client";
 import { useState, useEffect } from "react";
 import { Navbar } from "../components/navbar";
+import { ContactSection } from "../components/contact-section";
+import { Footer } from "../components/footer";
+import { useRouter } from "next/router";
 
 /**
  * Custom Next.js App
@@ -81,10 +84,17 @@ const MyApp = ({ Component, pageProps }: MyAppProps) => {
   // State, used to keep track of outline or no outline around buttons, inputs, etc.
   const [hasNoFocus, setHasNoFocus] = useState(true);
 
+  const router = useRouter();
+
   // If the user hits the 'tab' key, we want to add outlines back to focused elements for accessibility.
   const handleTabKeyPress = (evt: KeyboardEvent) => {
     if (evt.key === "Tab") setHasNoFocus(false);
   };
+
+  // check if it is signup or signin page to render footer
+  const isAuthPage: boolean =
+    router.pathname.substring(0, 7) === "/signin" ||
+    router.pathname.substring(0, 7) === "/signup";
 
   // Add event listener to listen for 'tab' key.
   useEffect(() => {
@@ -100,6 +110,12 @@ const MyApp = ({ Component, pageProps }: MyAppProps) => {
         <GlobalStyle hasNoFocus={hasNoFocus} />
         <Navbar />
         <Component {...pageProps} />
+        {!isAuthPage && (
+          <>
+            <ContactSection />
+            <Footer />
+          </>
+        )}
       </ThemeProvider>
     </Provider>
   );

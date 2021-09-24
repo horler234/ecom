@@ -1,8 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
-import Image from "next/image";
-import styled from "styled-components";
-import { Navbar } from "../components/navbar";
 import { HomeHeader } from "../components/home-header";
 import { TrendingSection } from "../components/trending-section";
 import { createClient } from "contentful";
@@ -25,8 +21,6 @@ export default function HomePage({ products }) {
       <TrendingSection />
       <AboutSection />
       <CategoriesSection />
-      <ContactSection />
-      <Footer />
     </>
   );
 }

@@ -48,7 +48,7 @@ const HeaderTextContainer = styled.div`
   }
 `;
 
-const HeaderTextButtonContainer = styled.div`
+export const HeaderTextButtonContainer = styled.div`
   display: flex;
 `;
 

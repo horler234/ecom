@@ -51,7 +51,7 @@ export const NavIcons = ({ onHamburgerClick }: NavIconsProps) => (
     </li>
 
     <li>
-      <Link href="/">
+      <Link href="/cart">
         <a>
           <CartIcon />
         </a>
