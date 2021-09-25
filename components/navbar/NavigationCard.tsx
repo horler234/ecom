@@ -81,7 +81,7 @@ export const NavigationCard = ({
         <NavigationCardItem name="home" href="/" isActive={checkActive("/")} />
         <NavigationCardItem
           name="about us"
-          href="/"
+          href="/about"
           isActive={checkActive("/about")}
         />
         <NavigationCardItem

@@ -67,10 +67,10 @@ export const Footer = () => {
 
       <FooterIconScrollContainer>
         <FooterIconsContainer>
-          <VisaIcon />
+          <VisaIcon iconHeight="32px" iconWidth="32px" />
           <AmazonIcon />
           <PaypalIcon />
-          <AppleIcon />
+          <AppleIcon iconHeight="26px" iconWidth="26px" />
         </FooterIconsContainer>
 
         <FooterScrollUpButton onClick={() => scrollTo(0, 0)}>
