@@ -1,47 +1,10 @@
 import Head from "next/head";
 import React, { useState } from "react";
-import {
-  AmazonIcon,
-  AppleIcon,
-  ArrowDownCircleIcon,
-  ArrowDownIcon,
-  ArrowDownLeftIcon,
-  ArrowDownRightIcon,
-  ArrowFillUpIcon,
-  ArrowHeadLeftIcon,
-  ArrowIOSRightIcon,
-  ArrowLeftCircleIcon,
-  ArrowLeftIcon,
-  ArrowRightCircleIcon,
-  ArrowRightIcon,
-  ArrowUpCircleIcon,
-  ArrowUpIcon,
-  ArrowUpLeftIcon,
-  ArrowUpRightIcon,
-  CartIcon,
-  CloseIcon,
-  HamburgerIcon,
-  HeartFillIcon,
-  HeartOutlineIcon,
-  PaypalIcon,
-  PlayCircleIcon,
-  VisaIcon,
-} from "../components/icons";
 import { signIn } from "next-auth/client";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { ProductCard } from "../components/product-card";
 import Link from "next/link";
-
-const Cell = ({view, onClick}) => {
-  return (
-    <td onClick={onClick}>{view}</td>
-  )
-}
-
-type  Props = {
-  amount: number;
-}
+import { SlashedPriceProductCard } from "../components/product-card/SlashedPriceProductCard";
 
 export default function DemoPage() {
   const [name, setName] = useState<string>("");
@@ -92,6 +55,15 @@ export default function DemoPage() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Ecom | Home</title>
       </Head>
+
+      <SlashedPriceProductCard
+        margin="30px"
+        imgSrc="/images/slashed-price-placeholder.png"
+        productName="Men's Complete Italian Suit"
+        discount={50}
+        initialPrice={1500}
+        discountPrice={540}
+      />
       {/* <ArrowDownCircleIcon />
       <ArrowUpCircleIcon />
       <ArrowLeftCircleIcon />
@@ -134,7 +106,6 @@ export default function DemoPage() {
         />
         <input type="submit" value="SUBMIT" />
       </form> */}
-      <ArrowHeadLeftIcon />
     </>
   );
 }
